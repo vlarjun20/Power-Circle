@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Energy Price</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <center><div class="container">
+        <br><br>
+    <h1>Predict Energy Price</h1>
+    <form name="container" action="/predict_price" method="POST"><br><br>
+        <label for="energy_units">Energy Units:</label><br>
+        <input type="number" id="energy_units" name="energy_units"></input>
+        <br><br>
+        <label for="total">Total:</label><br>
+        <input type="number" id="total" name="total"></input>
+        <br><br>
+        <button type="submit" value="Predict">Calculate</button>
+    </form>
+    {% if price is not none %}
+        <h3>Predicted Price: {{ price }} ETK</h3>
+    {% endif %}
+    </div></center>
+</body>
+</html>

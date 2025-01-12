@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGrid - Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <header>
+        <div class="image">
+            <img src="{{url_for('static',filename='images/logo.jpg')}}"></img>
+        </div>
+        <div class="container">
+            <h1>PowerCircle</h1><br>
+            <h3>Where Energy Meets Innovation</h3>
+            <h2>Explore energy trading powered by blockchain and dynamic pricing.</h2>
+        </div>
+        <div class="right">
+            <nav>
+                <ul>
+                    <li><a href="{{url_for('trade')}}">Start Trading</a></li>
+                    <li><a href="{{url_for('predict')}}">Predict Price</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="{{url_for('dash')}}">Dashboard</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="content">
+            <p><h3>Connecting the producers and consumers to trade surplus renewable energy efficiently and transparently.</h3></p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2><h3>PowerCircle-Where Energy Meets Innovation</h3>
+        <p>
+        Welcome to PowerCircle, where we're redefining how renewable energy is shared, traded, and utilized. At PowerCircle, we envision a future powered by clean, sustainable energy, where individuals and communities take control of their energy needs while contributing to a greener planet.  
+
+        Our platform enables a seamless connection between energy producers and consumers through blockchain technology, creating a transparent and efficient marketplace for renewable energy trading. Whether you generate solar power from your rooftop or seek sustainable energy solutions, PowerCircle empowers you to become an active participant in the energy revolution.<br>
+        <br> <b>What We Stand For:</b><br>
+        
+        <br>1. Sustainability: We believe in accelerating the transition to clean energy for a better tomorrow.  
+        <br>2. Transparency: Powered by blockchain, our platform ensures trust and fairness in every transaction.  
+        <br>3. Empowerment: Enabling individuals to take charge of their energy production and consumption.  
+        <br>4. Innovation: Combining cutting-edge technology with renewable energy to create a smarter, greener future.  
+        <br><br>
+        <h4>Join us in our mission to build an interconnected energy ecosystem where every watt matters.<br> Together, we can close the circle and power the world sustainably.</h4>
+        <br>
+        </p>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+                <li><strong>Peer-to-Peer Trading:</strong> Connect directly with energy producers.</li>
+                <li><strong>Smart Contracts:</strong> Automate secure and transparent transactions.</li>
+                <li><strong>Energy Tracking:</strong> Real-time monitoring of production and consumption.</li>
+                <li><strong>Carbon Credits:</strong> Earn rewards for using renewable energy.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to join the platform? Get in touch with us!</p>
+            <form action="#" method="post" autocomplete="off">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <br>
+                <div class="button-container">
+                    <button type="submit">Send Message</button>
+                </div>            
+            </form><br><br>
+        </div>
+    </section>
+
+    <section>
+        <footer>
+            <p>&copy; 2025 Renewable Energy Trading Platform. All Rights Reserved.</p>
+        </footer>
+    </section>
+
+</body>
+</html>

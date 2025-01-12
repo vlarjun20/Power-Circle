@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Trading Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #1E1E1E;
+            padding: 10px 20px;
+            border-bottom: 2px solid #FF4500;
+        }
+        .wallet {
+            display: flex;
+            align-items: center;
+            background-color: #FF4500;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .wallet-icon {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 20px;
+        }
+        .left-sidebar {
+            flex: 1;
+            width: 25%;
+            padding: 20px;
+            background-color: #FF4500;
+            border-radius: 10px;
+            color: #ffffff;
+            margin-right: 20px;
+        }
+        .right-sidebar {
+            flex: 3;
+            padding: 20px;
+            background-color: #1E1E1E;
+            border-radius: 10px;
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #333333;
+            color: #ffffff;
+        }
+        th {
+            background-color: #FF4500;
+        }
+        tr:hover {
+            background-color: #333333;
+            cursor: pointer;
+        }
+        .transaction-details {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #2E2E2E;
+            border-radius: 10px;
+        }
+        .conversion-scale {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #2E2E2E;
+            border-radius: 10px;
+        }
+        .conversion-scale h3 {
+            margin-bottom: 10px;
+        }
+        .conversion-scale p {
+            margin: 5px 0;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            align-content: center;
+        }
+        .conversion-scale .button {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff; /* Button text color (white) */
+            background-color: #FF6600; /* Button background (orange) */
+            padding: 10px 20px; /* Padding around the button */
+            border-radius: 5px; /* Rounded corners */
+            border: 2px solid #cc5200; /* Slightly darker orange border */
+            font-size: 16px; /* Adjust font size */
+            font-weight: bold; /* Make text bold */
+            transition: all 0.3s ease; /* Smooth hover effect */
+            margin-top: 10px;
+        }
+
+        .conversion-scale .button:hover {
+            background-color: #cc5200; /* Darker orange on hover */
+            color: #000; /* Change text color to black on hover */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow effect */
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            z-index: 1; /* Stay on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .modal-content {
+            background-color: #333333;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .modal-content button {
+            background-color: #FF4500;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal-content button:hover {
+            background-color: #cc5200;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Wallet -->
+    <div class="header">
+        <button class="wallet">
+            <span class="wallet-icon">💰</span> Wallet
+        </button>
+    </div>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <div class="profile-section">
+                <div class="profile-pic">
+                    <center><img src="{{url_for('static',filename='images/user.png')}}" alt="profile"></img></center>
+                </div><br>
+                <center><button class="edit-profile">Edit Profile</button></center>
+            </div><br><br><br>
+            <div>
+                <div class="section-title">Profile Details</div>
+                <ul class="details-list">
+                    <li class="details-item"><strong>Name:</strong> John Doe</li>
+                    <li class="details-item"><strong>Location:</strong> California, USA</li>
+                    <li class="details-item"><strong>Role:</strong> Energy Producer</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <!-- Transaction Table -->
+            <div class="details-group">
+                <div class="section-title">Transaction History</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hash</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr onclick="showTransactionDetails('T001', 'Alice Corp.', 'Solar', '1000', '1500')">
+                                <td>AB12CD34</td>
+                            </tr>
+                            <tr onclick="showTransactionDetails('T002', 'Eco Solutions', 'Wind', '500', '800')">
+                                <td>EF56GH78</td>
+                            </tr>
+                            <tr onclick="showTransactionDetails('T003', 'GreenTech', 'Solar', '750', '1100')">
+                                <td>IJ90KL12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Transaction Details -->
+            <div class="transaction-details" id="transaction-details">
+                <div class="section-title">Transaction Details</div>
+                <p>Select a hash from the table to view details.</p>
+            </div>
+
+            <!-- Cryptocurrency Conversion Scale -->
+            <div class="conversion-scale">
+                <!-- Crypto Converter ⚡ Widget -->
+                <crypto-converter-widget amount="1" shadow="true" symbol="true" live="true" fiat="united-states-dollar" crypto="bitcoin" font-family="inherit" background-color="#1e40af" decimal-places="2" border-radius="0.5rem"></crypto-converter-widget>
+                <a href="https://currencyrate.today/" target="_blank" rel="noopener" class="button">CurrencyRate.Today</a>
+                <script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script>
+                <!-- /Crypto Converter ⚡ Widget -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Wallet Info -->
+    <div id="walletModal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to GreenGrid</h2>
+            <p><strong>Wallet Info:</strong> $5000</p>
+            <p><strong>Wallet Address:</strong> 0x1234abcd5678efgh9012ijklmnopqrst</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Show Modal on page load
+        window.onload = function() {
+            document.getElementById('walletModal').style.display = 'flex';
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('walletModal').style.display = 'none';
+        }
+
+        function showTransactionDetails(id, buyer, energyType, amount, price) {
+            const detailsContainer = document.getElementById('transaction-details');
+            detailsContainer.innerHTML = `
+                <div class="section-title">Transaction Details</div>
+                <p><strong>Transaction ID:</strong> ${id}</p>
+                <p><strong>Buyer:</strong> ${buyer}</p>
+                <p><strong>Energy Type:</strong> ${energyType}</p>
+                <p><strong>Amount:</strong> ${amount} kWh</p>
+                <p><strong>Price:</strong> $${price}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,623 @@
+/* General Styles */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+background-color: #101010;  /* Dark background */
+color: #ff4500;  /* White text */
+line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #ff4500;
+    padding: 20px 0;
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    color: #101010;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 10px;;
+    left: auto;
+}
+
+header h3 {
+    color: #101010;
+    position: absolute;
+    top: 60px;;
+    left: auto;
+    text-align: justify;
+}
+
+header h2 {
+    color: #101010;
+    position: absolute;
+    top: 100px;;
+    left: 260px;
+    text-align: justify;
+}
+
+img{
+height: 80px;
+width: 80px;
+position: absolute;
+top: 20px;
+left: 25px;
+}
+
+header .right {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+header .right nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display items horizontally */
+    gap: 15px; /* Add spacing between buttons */
+}
+
+header .right nav ul li {
+    display: inline;
+}
+
+header .right nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Default text color (white) */
+    background-color: #000; /* Default background color (black) */
+    padding: 10px 15px; /* Add padding for a button-like appearance */
+    border: 2px solid transparent; /* Default border */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+header .right nav ul li a:hover {
+    background-color: #FF6600; /* Orange hover background */
+    color: #000; /* Text color changes to black on hover */
+    border: 2px solid #cc5200; /* Slightly darker orange border */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
+
+#hero h3{
+    color: #101010;
+    position: absolute;
+    top: 150px;;
+    left: 200px;
+    text-align:justify;
+}
+
+/* Container for navigation and links */
+nav ul
+{
+    list-style: none;
+    display:flex;
+}
+    
+nav ul li {
+    margin: 0 15px;
+    background-color: #ff4500;
+    border-radius: 5px;
+}
+    
+nav ul li a {
+    text-decoration: none;
+    color: #101010;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    font-size: 15px;
+}
+    
+nav ul li a:hover {
+    color: #000;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #ff4500;
+    padding: 60px ;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#hero .content{
+    text-align: center;
+}
+
+#hero .cta {
+    background-color: #101010;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#hero .cta:hover {
+    background-color: #ff3c00f5;
+}
+
+label {
+font-size: 1.2em;
+display: block;
+margin-bottom: 10px;
+}
+
+/* About Section */
+#about {
+    padding: 60px 0;
+    background-color: #101010;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff4500;
+}
+
+#about h2 ,#about h3{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+#about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    color: white;
+
+}
+
+/* Features Section */
+#features {
+    padding: 60px 0;
+    background-color: #ff4500;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #101010;
+}
+
+.features-list {
+    list-style: none;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.features-list li {
+    margin: 20px 0;
+    color: #101010;
+    text-align: center;
+}
+
+.features-list strong {
+    color:  #101010;
+}
+
+/* Contact Section */
+#contact {
+    padding: 0px 0;
+    background-color: #101010;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff4500;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #101010;
+    position: absolute;
+    top: 2190px;
+    right: 400px;
+}
+
+form input, form textarea {
+    width: 50%;
+    padding: 15px;
+    margin: 20px ;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form textarea {
+    width: 50%;
+    padding: 15px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #ff6600;
+    color: white;
+    padding: 15px; 
+    margin: 20px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form .button-container {
+    width: 25%;
+}
+ 
+form button:hover {
+    background-color: #101010;
+}
+
+/* Footer */
+footer {
+    background-color: #ff4500;
+    padding: 0;
+    text-align: center;
+    /*top: 30px;*/
+    bottom: 0%;
+}
+
+footer p {
+    font-size:small;
+    color: #101010;
+    text-align: center;
+}
+
+/* Home Page */
+#home-container {
+text-align: center;
+padding: 20px; 
+margin: 20px;
+}
+
+#home-container p {
+font-size: 1.5em;
+}
+
+#home-container a {
+font-size: 1.2em;
+margin: 15px;
+padding: 10px 20px;
+background-color: #ff4600;
+color: white;
+border-radius: 5px;
+display: inline-block;
+}
+
+#home-container a:hover {
+background-color: #e44c00;
+}
+
+
+
+
+/* Trade Page */
+#trade {
+    background-color: #FF4500; /* Vibrant orange background */
+    padding: 50px 0; /* Add spacing to the section */
+    color: white; /* White text for readability */
+}
+
+#trade-container {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #101010; /* Dark container background for contrast */
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    color: white;
+}
+
+#trade-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #FF4500; /* Orange color for heading */
+}
+
+#trade-container form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+#trade-container input[type="text"],
+#trade-container input[type="number"] {
+    width: 100%;
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Darker background for inputs */
+    color: white;
+    outline: none;
+}
+
+#trade-container input[type="text"]:focus,
+#trade-container input[type="number"]:focus {
+    border: 2px solid #FF4500; /* Highlight input fields on focus */
+}
+
+#trade-container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#trade-container button:hover {
+    background-color: #000; /* Change to black on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+#trade-container .response {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #FF4500; /* Highlight responses in orange */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    #trade-container form {
+        width: 90%; /* Make form width adaptive for small screens */
+    }
+}
+
+
+/* About Page */
+#about-container {
+text-align: center;
+padding: 50px 20px;
+}
+
+#about-container p {
+font-size: 1.5em;
+max-width: 800px;
+margin: 0 auto;
+}
+
+
+
+
+/* Predict Price Page */
+#predict {
+    background-color: #FF4600; /* Set the background color */
+    color: white; /* Ensure text is readable */
+    padding: 50px ; /* Add spacing to the section */
+    background-size: cover; /* Make the background consistent */
+    align-content: center;
+}
+
+#predict-container {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
+#predict-container form {
+    width: 400px;
+    background-color: #FF4500;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #121212; /* Add a black background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+#predict-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #FF6600; /* Orange highlight for heading */
+    align-content: center;
+}
+
+#predict-container input[type="text"],
+#predict-container input[type="number"] {
+    width: 100%;
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Darker background for input */
+    color: white; /* White text for visibility */
+    outline: none;
+    box-sizing: border-box;
+}
+
+#predict-container input[type="text"]:focus,
+#predict-container input[type="number"]:focus {
+    border: 2px solid #FF6600; /* Highlight input on focus */
+}
+
+#predict-container button {
+    width: 50%;
+    padding: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#predict-container button:hover {
+    background-color: #000; /* Change to black on hover */
+}
+
+#predict-container .prediction-result {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #FF6600; /* Highlight result in orange */
+    font-weight: bold;
+    bottom: 50px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    #predict-container form {
+        width: 90%; /* Adapt form width for smaller screens */
+    }
+}
+
+/*Responsive Design*/
+@media (max-width: 768px)
+{
+body {
+padding: 10px;
+}
+
+h1 {
+font-size: 2em;
+}
+
+form {
+width: 100%;
+padding: 15px;
+}
+
+input[type="submit"] {
+width: 100%;
+} 
+
+#home-container a,
+#home-container p {
+font-size: 1em;
+}
+
+nav {
+margin-top: 10px;
+}
+
+
+form .trade{
+    background-color: #ff4500;
+    align-content: center;
+}
+
+form .button-trade {
+    background-color: #101010;
+    color: white;
+    padding: 15px; 
+    margin: 20px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form .button-container {
+    width: 100%;
+    size: 20px;
+}
+ 
+form .button:hover {
+    background-color: white;
+}
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Card Styling */
+.modal-card {
+    background-color: #1E1E1E;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #FF4500;
+    cursor: pointer;
+}
+
+/* Confirm Button */
+.confirm-btn {
+    padding: 10px 20px;
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.confirm-btn:hover {
+    background-color: #cc5200; /* Darker orange on hover */
+}
+
+}
