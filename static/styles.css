@@ -297,6 +297,7 @@ footer {
 }
 
 footer p {
+    margin-top: 200px;
     font-size:small;
     color: #101010;
     text-align: center;

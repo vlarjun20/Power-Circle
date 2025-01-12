@@ -14,7 +14,7 @@ app = Flask(__name__)
 # Blockchain Connection Setup (Polygon)
 WEB3_PROVIDER = "https://polygon-rpc.com"
 CONTRACT_ADDRESS = "0x2791bca1f2de4661ed88a30c99a7a9449aa84174"
-PRIVATE_KEY = "0x0507D1b4ccfaaD751Ecd07CE3b45bDc5F4a8fd84"
+PRIVATE_KEY = "private key "
 ABI = [
    {
   "constant": False,
